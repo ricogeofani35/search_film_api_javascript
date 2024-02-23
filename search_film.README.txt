@@ -1,0 +1,31 @@
+1. regitrasi di api imdb
+2. dapatkan keynya
+3. test di postman untuk mendapatkan datanya dengan url http://www.omdbapi.com/?apikey=596d6f15 dengan key = s dan valuenya =  title film dan key  = i dan valu = imdbID untuk detail filmnya.u
+4. buat file index dan kita pakai template dari bootstrapt 5 dan jquernya kita ganti dengan jquer cdn karena jquery bootstrapt tidak ada ajaxnya
+5. fiturnya show film, detail film dengan modal box, dan search film
+//
+6. membuatnya dengan konsep ajax dengan library jquery
+7. panggil button search, jika di click jalankan konsep ajax dengan jquery dan parameter url, type get karena di url, dan callback success 
+8. looping response dari cards karena datanya ada banyak lalu masukan ke string card dan tampilkan di html / browser
+9. untuk detail panggil tombol detail jika di klick maka akan muncul modal yang menerimah data dari ajax dengan metode seperti diatas.
+//
+10. membuatnya dengan konsep ajax dengan modern javascript
+11. panggil button search, jika di click jalankan konsep ajax dengan method fetch parameter url
+12. jika resolved jalankan then dan response berupa promise tambahkan method json() untuk merubah data menjadi object, jika reject maka panggil catch
+13. panggil then sekali lagi dan data sudah berupa object 
+14. looping response dari cards karena datanya ada banyak lalu masukan ke string card dan tampilkan di html / browser
+15. untuk detail panggil tombol detail jika di klick maka akan muncul modal yang menerimah data dari ajax dengan metode seperti diatas.
+//
+16. membuatnya menjadi modular dengan fungsionalitas
+17. kita bedahkan get api card movies dan ui card movies menjadi fungsi tersendiri
+18. di get api card kita kembalikan datanya berupa object, lalu di ui card movies kita tangkap dengan fungsi uiCardMovies
+19. tapi fungsi berjalan secara synchronous sehingga datanya berupa promise karena tidak mau menunggu. 
+20. maka kita harus buat menjadi asynchonous dengan menambahkan method async dan await, async di callback dari event handler dan await di fungsi kita
+21. untuk detail movies caranya juga seperti diatas.
+//
+17. error handling pada program
+18. saat menggunakan fetch untuk compsumpt api error yang ditangkap pada catch hanya pada sisi url bukan pada api movie nya
+19. untuk mengatasinya kita bisa cek pada then pertama kita cek error dari sisi url dan kita lempar ke catch, error Failed to fetch = jika urlnya salah; Unauthorized = jika key apinya salah
+20. pada then kedua error dari sisi api imdbnya, Incorrect IMDb ID. = jika tidak ada yang di search; Movie not found! = jika tidak ada film yang dicari.
+20. jika tidak ada error baru kembalikan datanya.
+
